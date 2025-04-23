@@ -6,14 +6,15 @@
 /*   By: tle-goff <tle-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 11:49:03 by tle-goff          #+#    #+#             */
-/*   Updated: 2025/04/01 12:54:28 by tle-goff         ###   ########.fr       */
+/*   Updated: 2025/04/23 12:31:32 by tle-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 #include "iostream"
 
-void	print_arg(char c)
+template< typename T >
+void	print_arg(T& c)
 {
 	std::cout << c << std::endl;
 }

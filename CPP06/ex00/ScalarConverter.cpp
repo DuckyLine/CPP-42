@@ -6,7 +6,7 @@
 /*   By: tle-goff <tle-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 09:00:54 by tle-goff          #+#    #+#             */
-/*   Updated: 2025/03/31 10:28:24 by tle-goff         ###   ########.fr       */
+/*   Updated: 2025/04/22 11:58:39 by tle-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	printParam(int integer, float floats, double doubles) {
 	else
 		std::cout << "char: " << static_cast<char>(integer) << std::endl;
 	std::cout << "int: " << integer << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(2) << floats << "f" << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(2) << doubles << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << floats << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << doubles << std::endl;
 }
 
 void	checkParam(std::string param) {
@@ -40,6 +40,12 @@ void	checkParam(std::string param) {
 	if (param == "nan")
 	{
 		std::cout << "char: impossible\nint: impossible\nfloat: nanf\ndouble: nan" << std::endl;
+		return ;
+	} else if (param == "-inf") {
+		std::cout << "char: impossible\nint: impossible\nfloat: -inff\ndouble: -inf" << std::endl;
+		return ;
+	} else if (param == "+inf") {
+		std::cout << "char: impossible\nint: impossible\nfloat: +inff\ndouble: +inf" << std::endl;
 		return ;
 	}
 	if ((len >= 1 && (param[0] == '-' || param[0] == '+') && param[1] >= '0' && param[1] <= '9')
@@ -69,12 +75,4 @@ void ScalarConverter::convert(std::string param) {
 
 ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter has created !" << std::endl;
-}
-
-// ScalarConverter::ScalarConverter(ScalarConverter const &src) {
-// 	std::cout << "ScalarConverter has copy !" << std::endl;
-// }
-
-ScalarConverter::~ScalarConverter() {
-	std::cout << "ScalarConverter has delete !" << std::endl;
 }
